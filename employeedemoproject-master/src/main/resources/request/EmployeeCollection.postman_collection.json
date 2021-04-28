@@ -1,0 +1,272 @@
+{
+	"info": {
+		"_postman_id": "3a1e2c2d-219a-4598-89fb-b4bc56b98d29",
+		"name": "EmployeeCollection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "http://localhost:8080/Department",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"CSE\"\r\n   \r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Department"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Employee",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"raja\",\r\n    \"designation\":\"MANAGER\",\r\n    \"managerId\":1,\r\n    \r\n    \"salary\":\"15000.00\",\r\n    \"departmentId\":{\r\n        \"id\":1\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Employee",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Employee"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Employee/5",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"durai\",\r\n    \"designation\":\"Associate\",\r\n    \"managerId\":2,\r\n    \r\n    \"salary\":\"6000.00\",\r\n    \"departmentId\":{\r\n        \"id\":2\r\n    }\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/EmployeeBasedOnDepartment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeBasedOnDepartment",
+						"1"
+					]
+				},
+				"description": "Search employee based on empId"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/EmployeeBasedOnDepartment/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/EmployeeBasedOnDepartment/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeBasedOnDepartment",
+						"1"
+					]
+				},
+				"description": "EmployeeBasedOnDepartment Search"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/EmployeeBasedOnDepartment/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/EmployeeWithSalaryGreaterThan10KInDept/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeWithSalaryGreaterThan10KInDept",
+						"1"
+					]
+				},
+				"description": "EmployeeWithSalaryGreaterThan10K"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/EmployeeWithSalaryGreaterThan10KInDept/1",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/EmployeeWithSalaryGreaterThan10KInDept/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeWithSalaryGreaterThan10KInDept",
+						"1"
+					]
+				},
+				"description": "EmployeeWithSalaryGreaterThan10KInDept"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/EmployeeBasedOnDesignation/Manager",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8080/EmployeeBasedOnDesignation/Manager",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"EmployeeBasedOnDesignation",
+						"Manager"
+					]
+				},
+				"description": "EmployeeBasedOnDesignation"
+			},
+			"response": []
+		},
+		{
+			"name": "http://localhost:8080/Department",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					},
+					{
+						"key": "X-PAYPAL-SECURITY-CONTEXT",
+						"value": "{\"actor\":{\"client_id\":\"ATq4kPMhjTp6qrUQybY0SSz6Es1sO0YDF9f67rt2e-dZx36hHGbV1U9Ek3QRwcHcyyBlHXysRr-uXg18\",\"auth_claims\":[\"CLIENT_ID_SECRET\"],\"auth_state\":\"IDENTIFIED\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"auth_token\":\"ACCESS_TOKEN\",\"global_session_id\":\"I69d3673d-b1d3-4db4-9f6a-f6f006e71c8e\",\"last_validated\":1.490238822E9,\"scopes\":[\"*\"],\"subjects\":[{\"subject\":{\"auth_claims\":[\"USERNAME_PASSWORD\"],\"auth_state\":\"LOGGEDIN\",\"account_number\":\"1576391297965492683\",\"party_id\":\"1576391297965492683\",\"user_type\":\"CONSUMER\"},\"features\":[]}]}",
+						"disabled": true
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"id\":1,\r\n    \"name\":\"MTS\"\r\n}"
+				},
+				"url": {
+					"raw": "http://localhost:8080/Department",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"Department"
+					]
+				},
+				"description": "Department Name Update"
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
