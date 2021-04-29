@@ -31,6 +31,9 @@ public class Employee {
 	
 	//Designation Enum used
 	private Designation designation;
+	
+	@Embedded
+	private Address address;
 
 	@ManyToOne
 	@JoinColumn(name="departmentId")
